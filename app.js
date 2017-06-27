@@ -145,7 +145,7 @@ app.use(function(err, req, res, next) {
  */
 const PORT=3000;
 app.listen(PORT, function() {
-	console.log(`Example app listening on port ${PORT}!`)
+	console.log(`Express quickstart app listening on port ${PORT}!`)
 	console.log(process.env.NODE_ENV||"");
 })
 

@@ -57,6 +57,28 @@ Express-quieckstart is a fast development skeleton based on Node.js [Express](ht
 - Exception Handler
 
 
+
+## 模板引擎缓存控制 / Template engine cache control
+
+缓存有利于渲染性能，但在开发或调试模式时，可以将 `cache` 设置为 false，以便无需重启，刷新即可观察修改.
+
+Caching is useful for rendering performance, but in development or debug mode, you can set `cache` to false so that you can refreshing toobserve changes without restarting.
+
+- **app.js**
+
+```JS
+...
+/**
+ * Template Engine (EasyTemplatJS)
+ */
+var fs = require('fs')
+var Et = require('easytemplatejs');
+var cache = false;  // Use Cache?
+...
+```
+
+
+
 ## 为何选择 EasyTemplateJS? / Why choose EasyTemplateJS?
 
 Pug 等模板引擎带有自定义语言，需要高昂的学习成本，并且引擎内部需要对模板进行转换。
@@ -66,6 +88,7 @@ Pug 等模板引擎带有自定义语言，需要高昂的学习成本，并且�
 Pug and other template engine with a custom language, the need for high learning costs, and the need for internal transformation of the template template.
 
 [EasyTemplateJS](https://github.com/ushelp/EasyTemplateJS "EasyTemplateJS") is based on native HTML and JavaScript for template compilation and rendering. To maximize the advantages of EasyTemplateJS high performance, compact and easy to use.
+
 
 
 ## End
