@@ -26,7 +26,7 @@ Express-quieckstart is a fast development skeleton based on Node.js [Express](ht
 	npm install
 	```
 	
-- 启动 / Starup:
+- 启动 / Startup:
 	```
 	npm start
 	```
