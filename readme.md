@@ -56,6 +56,29 @@ Express-quieckstart is a fast development skeleton based on Node.js [Express](ht
 
 - Exception Handler
 
+## 目录结构 / directory structure
+
+```sh
+.
+├── app.js
+├── package.json
+├── public
+│   ├── img
+│   ├── js
+│   └── css
+│       └── style.css
+│   └── favicon.
+│   └── upload.html
+├── routes
+│   ├── index.js
+│   └── users.js
+└── views
+    ├── error.etj
+    ├── index.etj
+    └── users.etj
+
+6 directories, 10 files
+```
 
 
 ## 模板引擎缓存控制 / Template engine cache control
