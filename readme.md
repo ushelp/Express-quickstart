@@ -67,7 +67,7 @@ Express-quieckstart is a fast development skeleton based on Node.js [Express](ht
 │   ├── js
 │   └── css
 │       └── style.css
-│   └── favicon.
+│   └── favicon.ico
 │   └── upload.html
 ├── routes
 │   ├── index.js
@@ -80,7 +80,7 @@ Express-quieckstart is a fast development skeleton based on Node.js [Express](ht
 6 directories, 10 files
 ```
 
-
+  
 ## 模板引擎缓存控制 / Template engine cache control
 
 缓存有利于渲染性能，但在开发或调试模式时，可以将 `cache` 设置为 false，以便无需重启，刷新即可观察修改.
