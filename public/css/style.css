@@ -1,0 +1,15 @@
+body {
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+	color: #0085FF
+}
+
+a {
+	color: #FF8442
+}
+
+ul li{
+	margin: 15px 0;
+}

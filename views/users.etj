@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>User list</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<h1>Users</h1>
+		<ul>
+		%{
+			for(var i=0;i<list.length;i++){
+				out('<li>'+list[i].name+", "+list[i].sex+'</li>');	
+			}
+		}%
+		</ul>
+	</body>
+</html>
