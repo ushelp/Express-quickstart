@@ -72,12 +72,13 @@ Express-quieckstart is a fast development skeleton based on Node.js [Express](ht
 ├── routes
 │   ├── index.js
 │   └── users.js
+├── uploads
 └── views
     ├── error.etj
     ├── index.etj
     └── users.etj
 
-6 directories, 10 files
+7 directories, 10 files
 ```
 
   
@@ -96,7 +97,8 @@ Caching is useful for rendering performance, but in development or debug mode, y
  */
 var fs = require('fs')
 var Et = require('easytemplatejs');
-var cache = false;  // Use Cache?
+//var cache = true;  // Use Cache?
+var cache = process.env.NODE_ENV == 'production'; // Use Cache?
 ...
 ```
 
@@ -106,11 +108,11 @@ var cache = false;  // Use Cache?
 
 Pug 等模板引擎带有自定义语言，需要高昂的学习成本，并且引擎内部需要对模板进行转换。
 
-而 [EasyTemplateJS](https://github.com/ushelp/EasyTemplateJS "EasyTemplateJS") 直接基于原生 HTML 和 JavaScript 进行模板编译和渲染。能更大限度发挥 EasyTemplateJS 高性能，小巧并简单易用的优势。
+而 [EasyTemplateJS](https://github.com/ushelp/EasyTemplateJS "EasyTemplateJS") 直接基于原生 HTML 和 JavaScript 进行模板编译和渲染，并支持内嵌 JavaScript 脚本(`<etj-script>...</etj-script>`)和 CSS 样式脚本(`<etj-script>...</etj-script>`)。能更大限度发挥 EasyTemplateJS 高性能，小巧并简单易用的优势。
 
 Pug and other template engine with a custom language, the need for high learning costs, and the need for internal transformation of the template template.
 
-[EasyTemplateJS](https://github.com/ushelp/EasyTemplateJS "EasyTemplateJS") is based on native HTML and JavaScript for template compilation and rendering. To maximize the advantages of EasyTemplateJS high performance, compact and easy to use.
+[EasyTemplateJS](https://github.com/ushelp/EasyTemplateJS "EasyTemplateJS") is based on native HTML and JavaScript for template compilation and rendering, support embedded JavaScript (`<etj-script>...</etj-script>`) and CSS(`<etj-script>...</etj-script>`). To maximize the advantages of EasyTemplateJS high performance, compact and easy to use.
 
 
 

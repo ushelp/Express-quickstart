@@ -684,12 +684,13 @@ function setDocumentScrollTop(ypos)
 ├── routes
 │   ├── index.js
 │   └── users.js
+├── uploads
 └── views
     ├── error.etj
     ├── index.etj
     └── users.etj
 
-6 directories, 10 files</pre>
+7 directories, 10 files</pre>
 </div> 
 <h2> <a id="模板引擎缓存控制--template-engine-cache-control" class="anchor" href="#%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E%E7%BC%93%E5%AD%98%E6%8E%A7%E5%88%B6--template-engine-cache-control" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>模板引擎缓存控制 / Template engine cache control</h2> 
 <p>缓存有利于渲染性能，但在开发或调试模式时，可以将 <code>cache</code> 设置为 false，以便无需重启，刷新即可观察修改.</p> 
@@ -704,14 +705,15 @@ function setDocumentScrollTop(ypos)
 <span class="pl-c"> */</span>
 <span class="pl-k">var</span> fs <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>fs<span class="pl-pds">'</span></span>)
 <span class="pl-k">var</span> Et <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>easytemplatejs<span class="pl-pds">'</span></span>);
-<span class="pl-k">var</span> cache <span class="pl-k">=</span> <span class="pl-c1">false</span>;  <span class="pl-c"><span class="pl-c">//</span> Use Cache?</span>
+<span class="pl-c"><span class="pl-c">//</span>var cache = true;  // Use Cache?</span>
+<span class="pl-k">var</span> cache <span class="pl-k">=</span> <span class="pl-c1">process</span>.<span class="pl-smi">env</span>.<span class="pl-c1">NODE_ENV</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">'</span>production<span class="pl-pds">'</span></span>; <span class="pl-c"><span class="pl-c">//</span> Use Cache?</span>
 <span class="pl-k">...</span></pre>
 </div> 
 <h2> <a id="为何选择-easytemplatejs--why-choose-easytemplatejs" class="anchor" href="#%E4%B8%BA%E4%BD%95%E9%80%89%E6%8B%A9-easytemplatejs--why-choose-easytemplatejs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>为何选择 EasyTemplateJS? / Why choose EasyTemplateJS?</h2> 
 <p>Pug 等模板引擎带有自定义语言，需要高昂的学习成本，并且引擎内部需要对模板进行转换。</p> 
-<p>而 <a href="https://github.com/ushelp/EasyTemplateJS" title="EasyTemplateJS">EasyTemplateJS</a> 直接基于原生 HTML 和 JavaScript 进行模板编译和渲染。能更大限度发挥 EasyTemplateJS 高性能，小巧并简单易用的优势。</p> 
+<p>而 <a href="https://github.com/ushelp/EasyTemplateJS" title="EasyTemplateJS">EasyTemplateJS</a> 直接基于原生 HTML 和 JavaScript 进行模板编译和渲染，并支持内嵌 JavaScript 脚本(<code>&lt;etj-script&gt;...&lt;/etj-script&gt;</code>)和 CSS 样式脚本(<code>&lt;etj-script&gt;...&lt;/etj-script&gt;</code>)。能更大限度发挥 EasyTemplateJS 高性能，小巧并简单易用的优势。</p> 
 <p>Pug and other template engine with a custom language, the need for high learning costs, and the need for internal transformation of the template template.</p> 
-<p><a href="https://github.com/ushelp/EasyTemplateJS" title="EasyTemplateJS">EasyTemplateJS</a> is based on native HTML and JavaScript for template compilation and rendering. To maximize the advantages of EasyTemplateJS high performance, compact and easy to use.</p> 
+<p><a href="https://github.com/ushelp/EasyTemplateJS" title="EasyTemplateJS">EasyTemplateJS</a> is based on native HTML and JavaScript for template compilation and rendering, support embedded JavaScript (<code>&lt;etj-script&gt;...&lt;/etj-script&gt;</code>) and CSS(<code>&lt;etj-script&gt;...&lt;/etj-script&gt;</code>). To maximize the advantages of EasyTemplateJS high performance, compact and easy to use.</p> 
 <h2> <a id="end" class="anchor" href="#end" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>End</h2> 
 <p>Email：<a href="mailto:inthinkcolor@gmail.com">inthinkcolor@gmail.com</a></p> 
 <p><a href="http://www.easyproject.cn" title="EasyProject Home">http://www.easyproject.cn</a></p> 

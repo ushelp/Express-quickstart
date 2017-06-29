@@ -25,13 +25,17 @@ const session = require('express-session');
 // Application
 const app = express()
 
+var colors = require('colors');  
 
 /**
  * Template Engine (EasyTemplatJS)
  */
 var fs = require('fs')
 var Et = require('easytemplatejs');
-var cache = true;  // Use Cache?
+Et.enableScript = true; // enable <etj-script>
+Et.enableStyle = true; // enable <etj-style>
+//var cache = true;  // Use Cache?
+var cache = process.env.NODE_ENV == 'production'; // Use Cache?
 var cacheTpl = {}; 
 app.engine('etj', function(filePath, data, callback) {
 	fs.readFile(filePath, function(err, content) {
@@ -65,8 +69,13 @@ app.use(express.static('public')) // static
 
 
 
-// Redis Session presists
 // Memory Session temporary
+/*
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+!!!Please use Redis Session presists!!!
+*/
 app.use(session({
 	secret: 'se3r4t', 
 	name: 'nsessionId', 
@@ -79,6 +88,7 @@ app.use(session({
 	}
 }));
  
+// Redis Session presists
 /*
 const RedisStore = require('connect-redis')(session);
 
@@ -139,14 +149,21 @@ app.use(function(err, req, res, next) {
 });
 
 
-
 /**
  * Start Server
  */
 const PORT=3000;
 app.listen(PORT, function() {
-	console.log(`Express quickstart app listening on port ${PORT}!`)
-	console.log(process.env.NODE_ENV||"");
+	console.log('')
+	console.log(`=================================================`.yellow)
+	console.log(`Express quickstart app listening on port `+`${PORT}`.bgGreen+'!')
+	console.log('')
+	console.log(`process.env.NODE_ENV: `.cyan+(process.env.NODE_ENV||"").bold.bgGreen);
+	console.log(`EasyTemplate Engine cache: `.cyan+(cache?'enabled':'disabled').bold.bgGreen);
+	console.log('')
+	console.log(`http://127.0.0.1:3000`.green)
+	console.log(`=================================================`.yellow)
+	console.log('')
 })
 
 

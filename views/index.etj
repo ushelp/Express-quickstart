@@ -4,15 +4,46 @@
 		<meta charset="UTF-8">
 		<title>Index</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+				
+		<etj-style>
+			body{
+				text-align:center
+			}
+			.list{
+			}
+			.list div{
+				margin:20px 0;
+				font-size:20px;
+			}
+		</etj-style>
+	
 	</head>
 	<body>
-		<h1>Hello {title}!</h1>
-		<h2>{name} [{email}]</h2>
+		<h1 id="title">Hello {title}!</h1>
+		<div>
+			{name} - [{email}]
+		</div>
 
-		<ul>
-			<li><a href="/users">/users</a></li>
-			<li><a href="/users/1234">/user/1234</a></li>
-			<li><a href="/upload.html">/upload.html</a></li>
-		</ul>
+		<div class="list">
+			<div>View: <a href="/users">/users</a></div>
+			<div>JSON: <a href="/users/1234">/user/1234</a></div>
+			<div>Upload: <a href="/upload.html">/upload.html</a></div>
+		</div>
+		
+		<etj-script>
+			function test(){
+				console.info('test etj-script execute...');
+			};
+			var jay={
+				name:"Jay",
+				hey:function(){
+					console.info('I’m '+this.name);
+				}
+			};
+			test();
+			jay.hey();
+			document.getElementById('title').style.color='#0084C6';
+		</etj-script>
+
 	</body>
 </html>
