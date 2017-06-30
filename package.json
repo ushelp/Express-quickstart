@@ -1,7 +1,7 @@
 {
   "name": "express-quickstart",
-  "version": "1.2.0",
-  "description": "Node.js Express application skeleton use EasyTemplateJS engine. Others include CORS, Cookie, Session(cookie/redis), Logging(morgan&winston), Body-parse, Multer, Serve-favicon, Compression, Exception Handler...",
+  "version": "1.2.1",
+  "description": "Node.js Express application skeleton use EasyTemplateJS engine. Others include CORS, Cookie, Session(cookie/redis), Logging(morgan&winston), Body-parse, Multer, Method-override, Serve-favicon, Compression, Exception Handler...",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
@@ -26,5 +26,7 @@
     "serve-favicon": "^2.4.3",
     "winston": "^2.3.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "method-override": "^2.3.9"
+  }
 }

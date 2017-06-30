@@ -50,7 +50,21 @@ router.get('/logout', function(req, res, next) {
 });
 
 
-/* Upload */ 
+/* DELETE Users remove. */
+router.delete('/:userid', function(req, res, next) {
+	res.json({
+		code: 0,
+		method: 'HTTP DELETE',
+		msg:`${req.params.userid} Remove success!`
+	});
+});
+
+
+/*
+ * ---------------------
+ * Upload
+ * --------------------
+ */
 const multer = require('multer');
 
 // upload dest

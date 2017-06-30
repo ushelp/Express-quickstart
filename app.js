@@ -21,10 +21,13 @@ const compression = require('compression')
 const cookieParser = require('cookie-parser')
 const session = require('express-session');
 
+/* method-override: Override HTTP verbs. */
+var methodOverride = require('method-override')
 
 // Application
 const app = express()
 
+// Console
 var colors = require('colors');  
 
 /**
@@ -66,7 +69,6 @@ app.use(cors()) // CORS
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico'))) // favicon
 app.use(cookieParser()) // Cookies
 app.use(express.static('public')) // static
-
 
 
 // Memory Session temporary
@@ -116,10 +118,18 @@ app.use(bodyParser.text({type: 'text/html'}))
 app.use(bodyParser.urlencoded({ extended: false }));  // create application/x-www-form-urlencoded parser  
 app.use(bodyParser.json());  // create application/json parser 
 
-
+/* Override HTTP verbs. */
+// Support HTTP verbs request in form POST parmas `_method`
+app.use(methodOverride(function (req, res) {
+  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+    // look in urlencoded POST bodies and delete it
+    var method = req.body._method
+    delete req.body._method
+    return method
+  }
+}))
 
 /* Router */
-
 var index = require('./routes/index');
 var users = require('./routes/users');
 

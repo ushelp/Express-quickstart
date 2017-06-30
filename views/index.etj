@@ -25,9 +25,18 @@
 		</div>
 
 		<div class="list">
-			<div>View: <a href="/users">/users</a></div>
-			<div>JSON: <a href="/users/1234">/user/1234</a></div>
-			<div>Upload: <a href="/upload.html">/upload.html</a></div>
+			<div>HTML view: <a href="/users">/users</a></div>
+			<div>JSON get result: <a href="/users/1234">/users/1234</a></div>
+			<div>Upload page: <a href="/upload.html">/upload.html</a></div>
+			
+			<div>	
+				<!-- enctype must be set to the type you will parse before methodOverride() -->
+				<form action="/users/1234?_method=DELETE" method="POST" enctype="application/x-www-form-urlencoded">
+					HTTP verbs request: 
+					<input type="text" size="6" name="_method" value="DELETE" readonly=""/>
+					<input type="submit" value="/users/1234"/>
+				</form>
+			</div>
 		</div>
 		
 		<etj-script>

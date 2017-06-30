@@ -50,6 +50,8 @@ Express-quieckstart is a fast development skeleton based on Node.js [Express](ht
 
 - Multer
 
+- Method-override
+
 - Serve-favicon
 
 - Compression
@@ -57,7 +59,7 @@ Express-quieckstart is a fast development skeleton based on Node.js [Express](ht
 - Exception Handler
 
 ## 目录结构 / directory structure
-
+ 
 ```sh
 .
 ├── app.js
