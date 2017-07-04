@@ -68,7 +68,7 @@ app.use(compression()) // Compress
 app.use(cors()) // CORS
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico'))) // favicon
 app.use(cookieParser()) // Cookies
-app.use(express.static('public')) // static
+app.use('/static',express.static('public')) // static
 
 
 // Memory Session temporary

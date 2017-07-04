@@ -5,9 +5,9 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
 	
 	// Template Engine Data demo: app.locals, res.locals, locals
-	req.app.locals.title="Express App";
+	req.app.locals.title="QuickStart Express App";
 	res.locals.email='xxx@yyy.zzz';
-	res.render('index', { name: 'Jay', console: console });
+	res.render('index', { name: 'JAY', console: console });
 });
 
 module.exports = router;

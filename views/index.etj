@@ -3,42 +3,45 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Index</title>
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="static/css/style.css"/>
 				
 		<etj-style>
-			body{
-				text-align:center
+			#container{
+				text-align:left;
+				width:620px;
+				margin:10px auto;
 			}
-			.list{
-			}
-			.list div{
+			#title{ text-align:center}
+			#info{ text-align:right}
+			div.list div{
 				margin:20px 0;
-				font-size:20px;
+				font-size:16px;
 			}
 		</etj-style>
 	
 	</head>
 	<body>
-		<h1 id="title">Hello {title}!</h1>
-		<div>
-			{name} - [{email}]
-		</div>
-
-		<div class="list">
-			<div>HTML view: <a href="/users">/users</a></div>
-			<div>JSON get result: <a href="/users/1234">/users/1234</a></div>
-			<div>Upload page: <a href="/upload.html">/upload.html</a></div>
-			
-			<div>	
-				<!-- enctype must be set to the type you will parse before methodOverride() -->
-				<form action="/users/1234?_method=DELETE" method="POST" enctype="application/x-www-form-urlencoded">
-					HTTP verbs request: 
-					<input type="text" size="6" name="_method" value="DELETE" readonly=""/>
-					<input type="submit" value="/users/1234"/>
-				</form>
+		<div id="container">
+			<img src="static/img/app.png"/>
+			<h1 id="title">{title}!</h1>
+			<div id="info">
+				{name} - [{email}]
+			</div>
+			<div class="list">
+				<div>HTML view: <a href="/users">/users</a></div>
+				<div>JSON view: <a href="/users/1234">/users/1234</a></div>
+				<div>Upload page: <a href="/upload.html">/upload.html</a></div>
+				
+				<div>	
+					<!-- enctype must be set to the type you will parse before methodOverride() -->
+					<form action="/users/1234?_method=DELETE" method="POST" enctype="application/x-www-form-urlencoded">
+						HTTP verbs request: 
+						<input type="text" size="6" name="_method" value="DELETE" readonly=""/>
+						<input type="submit" value="/users/1234"/>
+					</form>
+				</div>
 			</div>
 		</div>
-		
 		<etj-script>
 			function test(){
 				console.info('test etj-script execute...');
