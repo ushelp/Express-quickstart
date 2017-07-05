@@ -30,7 +30,7 @@
 			<div class="list">
 				<div>HTML view: <a href="/users">/users</a></div>
 				<div>JSON view: <a href="/users/1234">/users/1234</a></div>
-				<div>Upload page: <a href="/upload.html">/upload.html</a></div>
+				<div>Upload page: <a href="/static/upload.html">/static/upload.html</a></div>
 				
 				<div>	
 					<!-- enctype must be set to the type you will parse before methodOverride() -->
