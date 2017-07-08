@@ -181,3 +181,8 @@ app.listen(PORT, function() {
 //process.on('uncaughtException', function (err) {
 //  console.log('Caught exception: ', err);
 //});
+
+// Promise unhandled exception
+process.on('unhandledRejection', (reason, p) => {
+    console.log("Unhandled Rejection at: Promise ", p, " reason: ", reason);
+});

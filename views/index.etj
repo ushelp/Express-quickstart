@@ -23,9 +23,9 @@
 	<body>
 		<div id="container">
 			<img src="static/img/app.png"/>
-			<h1 id="title">{title}!</h1>
+			<h1 id="title">{=title}!</h1>
 			<div id="info">
-				{name} - [{email}]
+				{=name} - [{=email}]
 			</div>
 			<div class="list">
 				<div>HTML view: <a href="/users">/users</a></div>
@@ -55,6 +55,7 @@
 			test();
 			jay.hey();
 			document.getElementById('title').style.color='#0084C6';
+			console.info('{=title}')
 		</etj-script>
 
 	</body>
